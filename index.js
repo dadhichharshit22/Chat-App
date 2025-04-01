@@ -16,9 +16,14 @@ io.on("connection",(socket)=>{
     });
 }) 
 
+// frontend
+
 app.use(express.static(path.resolve("./public")));
+
+// Controller
 app.get("/",(req,res)=>{
     return res.sendFile("./public/index.html");
 });
 
+// Server Listen at the port number 9000
 server.listen(9000,()=>{console.log("Server is running at port number 9000")});
